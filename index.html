@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl" class="scroll-smooth">
+<html lang="he" dir="rtl" class="scroll-smooth" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ר.ח עבודות עפר בע״מ | R.H Earthworks Ltd</title>
     
-    <!-- Google Fonts: Heebo for modern Hebrew and English typography -->
+    <!-- Google Fonts: Heebo for modern bilingual typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,11 +22,13 @@
                         sans: ['Heebo', 'sans-serif'],
                     },
                     colors: {
+                        // Elegant Olive Green Palette
                         olive: {
-                            400: '#a3b18a', // Light olive
-                            500: '#588157', // Main olive green
-                            600: '#3a5a40', // Dark olive
-                            700: '#344e41',
+                            400: '#8ba869',
+                            500: '#6b8e23', 
+                            600: '#556b2f',
+                            700: '#3f4f23',
+                            800: '#2d381a',
                         },
                         industrial: {
                             800: '#27272a',
@@ -40,7 +42,6 @@
     </script>
 
     <style>
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -48,59 +49,61 @@
             background: #18181b; 
         }
         ::-webkit-scrollbar-thumb {
-            background: #588157; 
+            background: #556b2f; 
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #3a5a40; 
+            background: #6b8e23; 
         }
-        
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(9,9,11,0.8) 0%, rgba(9,9,11,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.6) 100%);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 antialiased font-sans flex flex-col min-h-screen selection:bg-olive-500 selection:text-white transition-all duration-300">
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen selection:bg-olive-500 selection:text-white transition-all duration-300">
+
+    <!-- Floating Phone Button -->
+    <a href="tel:+97249865352" class="fixed bottom-6 right-6 z-[60] bg-olive-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group" aria-label="Call Us">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+    </a>
 
     <!-- Header / Navbar -->
-    <header class="fixed w-full top-0 z-50 bg-industrial-950/95 backdrop-blur-sm border-b border-gray-800 shadow-lg transition-all duration-300">
+    <header class="fixed w-full top-0 z-50 bg-industrial-950/95 backdrop-blur-md border-b border-gray-800 shadow-lg transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-4">
-                
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-olive-500 rounded flex items-center justify-center text-white font-black text-xl transform -skew-x-12">
-                        ר.ח
+                    <div class="w-10 h-10 bg-olive-600 rounded flex items-center justify-center text-white font-black text-xl">
+                        RH
                     </div>
-                    <span class="text-white font-black text-xl tracking-wide hidden sm:block" data-he="עבודות עפר <span class='text-olive-400 text-sm font-normal'>בע״מ</span>" data-en="R.H Earthworks <span class='text-olive-400 text-sm font-normal'>Ltd</span>">
-                        עבודות עפר <span class="text-olive-400 text-sm font-normal">בע״מ</span>
-                    </span>
+                    <div class="flex flex-col">
+                        <span class="text-white font-black text-lg tracking-wide leading-none" data-he="ר.ח עבודות עפר" data-en="R.H Earthworks">ר.ח עבודות עפר</span>
+                        <span class="text-olive-400 text-xs font-semibold tracking-widest" data-he="בע״מ" data-en="LTD">בע״מ</span>
+                    </div>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex gap-6 lg:gap-8 items-center">
+                <nav class="hidden md:flex items-center gap-8">
                     <a href="#home" class="text-gray-300 hover:text-olive-400 font-medium transition-colors" data-he="ראשי" data-en="Home">ראשי</a>
                     <a href="#about" class="text-gray-300 hover:text-olive-400 font-medium transition-colors" data-he="אודות" data-en="About">אודות</a>
                     <a href="#services" class="text-gray-300 hover:text-olive-400 font-medium transition-colors" data-he="שירותים" data-en="Services">שירותים</a>
                     <a href="#projects" class="text-gray-300 hover:text-olive-400 font-medium transition-colors" data-he="פרויקטים" data-en="Projects">פרויקטים</a>
                     
-                    <!-- Language Toggle -->
-                    <button onclick="toggleLanguage()" class="flex items-center gap-1 text-gray-300 hover:text-white bg-industrial-800 px-3 py-1 rounded-full text-sm border border-gray-700 transition-colors">
-                        <svg class="w-4 h-4 text-olive-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                    <!-- Language Toggle Button -->
+                    <button onclick="toggleLanguage()" class="flex items-center gap-1 border border-gray-600 rounded px-2 py-1 text-sm text-gray-300 hover:text-white hover:border-olive-500 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
                         <span id="lang-text">EN</span>
                     </button>
-                </nav>
-                
-                <!-- Contact Button (WhatsApp) -->
-                <div class="hidden md:block">
-                    <a href="https://wa.me/972500000000" target="_blank" class="flex items-center gap-2 bg-olive-500 hover:bg-olive-600 text-white font-bold py-2 px-5 rounded-sm transition-transform hover:-translate-y-0.5 shadow-lg">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        <span data-he="בוואטסאפ" data-en="WhatsApp">בוואטסאפ</span>
+                    
+                    <a href="#contact" class="bg-olive-600 hover:bg-olive-500 text-white font-bold py-2 px-6 rounded transition-all inline-flex items-center gap-2">
+                        <span data-he="צור קשר" data-en="Contact Us">צור קשר</span>
                     </a>
-                </div>
+                </nav>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile menu buttons -->
                 <div class="md:hidden flex items-center gap-4">
-                    <button onclick="toggleLanguage()" class="flex items-center text-gray-300 hover:text-white bg-industrial-800 px-2 py-1 rounded text-xs border border-gray-700">
+                    <button onclick="toggleLanguage()" class="text-gray-300 border border-gray-600 px-2 py-1 rounded text-xs">
                         <span id="lang-text-mobile">EN</span>
                     </button>
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
@@ -112,45 +115,41 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-industrial-900 border-t border-gray-800">
-            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-white hover:text-olive-400 hover:bg-industrial-800 rounded-md" data-he="ראשי" data-en="Home">ראשי</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-olive-400 hover:bg-industrial-800 rounded-md" data-he="אודות" data-en="About">אודות</a>
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-olive-400 hover:bg-industrial-800 rounded-md" data-he="שירותים" data-en="Services">שירותים</a>
                 <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-olive-400 hover:bg-industrial-800 rounded-md" data-he="פרויקטים" data-en="Projects">פרויקטים</a>
-                <a href="https://wa.me/972500000000" target="_blank" class="flex items-center gap-2 px-3 py-2 text-base font-medium text-olive-400 hover:bg-industrial-800 rounded-md mt-4 border border-olive-500/30">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    <span data-he="הודעה בוואטסאפ" data-en="Message on WhatsApp">הודעה בוואטסאפ</span>
-                </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-20 pb-32 flex items-center min-h-[90vh]" style="background-image: url('WhatsApp Image 2026-10-25 at 10.50.28 AM.jpeg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <section id="home" class="relative pt-20 pb-32 flex items-center min-h-[95vh]" style="background-image: url('2.jpeg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="absolute inset-0 hero-overlay"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-3xl">
-                <div class="inline-block bg-olive-500/20 border border-olive-500/50 text-olive-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm" data-he="מקצועיות, אמינות ועוצמה" data-en="Professionalism, Reliability, Power">
+        <div class="container mx-auto px-4 relative z-10 flex justify-center items-center h-full">
+            <div class="max-w-4xl text-center">
+                <div class="inline-block bg-olive-600/30 border border-olive-500/50 text-olive-400 px-6 py-2 rounded-full text-sm font-semibold mb-8 backdrop-blur-sm tracking-wide" data-he="מקצועיות, אמינות ועוצמה" data-en="Professionalism, Reliability, and Power">
                     מקצועיות, אמינות ועוצמה
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6" data-he="הבסיס החזק <br/> <span class='text-olive-400'>לפרויקט שלכם.</span>" data-en="The solid foundation <br/> <span class='text-olive-400'>for your project.</span>">
-                    הבסיס החזק <br/> <span class="text-olive-400">לפרויקט שלכם.</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+                    <span data-he="הבסיס החזק" data-en="The Strong Foundation">הבסיס החזק</span> <br/> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-olive-400 to-green-200" data-he="לפרויקט שלכם." data-en="For Your Project.">לפרויקט שלכם.</span>
                 </h1>
-                <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed" data-he="ר.ח עבודות עפר בע״מ מספקת פתרונות מתקדמים, ציוד כבד חדיש וצוות מיומן לביצוע עבודות תשתית, חציבה ופיתוח ברמה הגבוהה ביותר." data-en="R.H Earthworks Ltd provides advanced solutions, state-of-the-art heavy machinery, and a skilled team for infrastructure, excavation, and development projects at the highest level.">
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed" data-he="ר.ח עבודות עפר בע״מ מספקת פתרונות מתקדמים, ציוד כבד חדיש וצוות מיומן לביצוע עבודות תשתית, חציבה ופיתוח ברמה הגבוהה ביותר." data-en="R.H Earthworks Ltd provides advanced solutions, modern heavy equipment, and a skilled team for infrastructure, excavation, and development works at the highest level.">
                     ר.ח עבודות עפר בע״מ מספקת פתרונות מתקדמים, ציוד כבד חדיש וצוות מיומן לביצוע עבודות תשתית, חציבה ופיתוח ברמה הגבוהה ביותר.
                 </p>
-                <div class="flex flex-wrap gap-4 items-center">
-                    <a href="https://wa.me/972500000000" target="_blank" class="flex items-center gap-3 bg-olive-500 hover:bg-olive-600 text-white font-bold py-4 px-8 rounded-sm text-lg transition-transform hover:-translate-y-1 shadow-lg">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        <span data-he="דברו איתנו בוואטסאפ" data-en="Contact via WhatsApp">דברו איתנו בוואטסאפ</span>
-                    </a>
-                    <a href="#projects" class="bg-industrial-800/80 hover:bg-industrial-700 text-white border border-gray-600 font-bold py-4 px-8 rounded-sm text-lg transition-all backdrop-blur-sm" data-he="צפו בפרויקטים" data-en="View Projects">
-                        צפו בפרויקטים
-                    </a>
-                </div>
             </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/50 hover:text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -162,22 +161,22 @@
                 <!-- Text Content -->
                 <div class="lg:w-1/2 space-y-6">
                     <h2 class="text-4xl font-black text-industrial-900 relative inline-block">
-                        <span data-he="אודות החברה" data-en="About the Company">אודות החברה</span>
-                        <span class="absolute -bottom-2 right-0 w-1/2 h-1.5 bg-olive-500 ltr:left-0 ltr:right-auto"></span>
+                        <span data-he="אודות החברה" data-en="About The Company">אודות החברה</span>
+                        <span class="absolute -bottom-2 end-0 w-1/2 h-1.5 bg-olive-500"></span>
                     </h2>
                     <h3 class="text-2xl font-bold text-gray-700 mt-4" data-he="מובילים בעבודות עפר ופיתוח תשתיות" data-en="Leaders in Earthworks and Infrastructure Development">
                         מובילים בעבודות עפר ופיתוח תשתיות
                     </h3>
-                    <p class="text-lg text-gray-600 leading-relaxed" data-he="חברת <strong>ר.ח עבודות עפר בע״מ</strong> מתמחה בביצוע מגוון רחב של פרויקטים מורכבים בתחום התשתיות, פיתוח השטח והחציבה. אנו מחזיקים בצי כלים כבדים מהמתקדמים בתחום, המאפשרים לנו להתמודד עם כל אתגר בשטח." data-en="<strong>R.H Earthworks Ltd</strong> specializes in executing a wide range of complex projects in infrastructure, land development, and excavation. We operate a fleet of advanced heavy machinery, enabling us to tackle any field challenge.">
-                        חברת <strong>ר.ח עבודות עפר בע״מ</strong> מתמחה בביצוע מגוון רחב של פרויקטים מורכבים בתחום התשתיות, פיתוח השטח והחציבה. אנו מחזיקים בצי כלים כבדים מהמתקדמים בתחום, המאפשרים לנו להתמודד עם כל אתגר בשטח.
+                    <p class="text-lg text-gray-600 leading-relaxed" data-he="חברת ר.ח עבודות עפר בע״מ מתמחה בביצוע מגוון רחב של פרויקטים מורכבים בתחום התשתיות, פיתוח השטח והחציבה. אנו מחזיקים בצי כלים כבדים מהמתקדמים בתחום, המאפשרים לנו להתמודד עם כל אתגר בשטח." data-en="R.H Earthworks Ltd specializes in executing a wide range of complex projects in the fields of infrastructure, land development, and excavation. We maintain an advanced fleet of heavy equipment, enabling us to tackle any challenge in the field.">
+                        חברת ר.ח עבודות עפר בע״מ מתמחה בביצוע מגוון רחב של פרויקטים מורכבים בתחום התשתיות, פיתוח השטח והחציבה. אנו מחזיקים בצי כלים כבדים מהמתקדמים בתחום, המאפשרים לנו להתמודד עם כל אתגר בשטח.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed" data-he="המחויבות שלנו למצוינות, עמידה בלוחות זמנים ובטיחות מחמירה הפכו אותנו לבחירה המועדפת על יזמים, קבלנים ורשויות מקומיות. אנו מביאים לשטח ניסיון רב, מקצועיות ללא פשרות ופתרונות הנדסיים חכמים." data-en="Our commitment to excellence, meeting deadlines, and strict safety standards have made us the preferred choice for developers, contractors, and local authorities. We bring extensive experience, uncompromising professionalism, and smart engineering solutions to the field.">
-                        המחויבות שלנו למצוינות, עמידה בלוחות זמנים ובטיחות מחמירה הפכו אותנו לבחירה המועדפת על יזמים, קבלנים ורשויות מקומיות. אנו מביאים לשטח ניסיון רב, מקצועיות ללא פשרות ופתרונות הנדסיים חכמים.
+                    <p class="text-lg text-gray-600 leading-relaxed" data-he="המחויבות שלנו למצוינות, עמידה בלוחות זמנים ובטיחות מחמירה הפכו אותנו לבחירה המועדפת על יזמים, קבלנים ורשויות מקומיות." data-en="Our commitment to excellence, meeting deadlines, and strict safety standards have made us the preferred choice for developers, contractors, and local authorities.">
+                        המחויבות שלנו למצוינות, עמידה בלוחות זמנים ובטיחות מחמירה הפכו אותנו לבחירה המועדפת על יזמים, קבלנים ורשויות מקומיות.
                     </p>
                     
                     <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200 mt-8">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded bg-olive-50 flex items-center justify-center shrink-0">
+                            <div class="w-12 h-12 rounded bg-olive-500/10 flex items-center justify-center shrink-0">
                                 <svg class="w-6 h-6 text-olive-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
@@ -188,14 +187,14 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded bg-olive-50 flex items-center justify-center shrink-0">
+                            <div class="w-12 h-12 rounded bg-olive-500/10 flex items-center justify-center shrink-0">
                                 <svg class="w-6 h-6 text-olive-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
                             <div>
                                 <h4 class="font-bold text-industrial-900" data-he="עמידה בזמנים" data-en="On-Time Delivery">עמידה בזמנים</h4>
-                                <p class="text-sm text-gray-500" data-he="התחייבות ללוחות הזמנים של הלקוח." data-en="Commitment to client schedules.">התחייבות ללוחות הזמנים של הלקוח.</p>
+                                <p class="text-sm text-gray-500" data-he="התחייבות ללוחות הזמנים של הלקוח." data-en="Commitment to the client's schedule.">התחייבות ללוחות הזמנים של הלקוח.</p>
                             </div>
                         </div>
                     </div>
@@ -203,231 +202,159 @@
 
                 <!-- Image -->
                 <div class="lg:w-1/2 relative">
-                    <div class="absolute inset-0 bg-olive-500 translate-x-4 translate-y-4 rounded-sm -z-10 ltr:-translate-x-4"></div>
-                    <img src="WhatsApp Image 2026-10-25 at 10.50.32 AM.jpeg" alt="Heavy machinery at work" class="w-full h-[500px] object-cover rounded-sm shadow-xl border-4 border-white z-10 relative">
-                    
-                    <!-- Floating badge -->
-                    <div class="absolute -bottom-6 -left-6 ltr:left-auto ltr:-right-6 bg-industrial-900 text-white p-6 rounded-sm shadow-2xl border-r-4 ltr:border-l-4 ltr:border-r-0 border-olive-500 z-20">
-                        <div class="text-3xl font-black text-olive-400 mb-1">100%</div>
-                        <div class="text-sm font-medium" data-he="מחויבות לאיכות" data-en="Commitment to Quality">מחויבות לאיכות</div>
-                    </div>
+                    <div class="absolute inset-0 bg-olive-600 translate-x-4 translate-y-4 rounded z-0 opacity-20"></div>
+                    <img src="WhatsApp Image 2026-10-25 at 10.50.32 AM.jpeg" alt="Equipment" class="w-full h-[500px] object-cover rounded shadow-xl relative z-10">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-industrial-900 text-white relative">
+    <section id="services" class="py-24 bg-industrial-900 text-white">
         <div class="container mx-auto px-4">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-olive-500 font-bold tracking-wider uppercase text-sm mb-2 block" data-he="התמחויות" data-en="Expertise">התמחויות</span>
+                <span class="text-olive-500 font-bold tracking-wider uppercase text-sm mb-2 block" data-he="התמחויות" data-en="Our Expertise">התמחויות</span>
                 <h2 class="text-4xl md:text-5xl font-black mb-6" data-he="השירותים שלנו" data-en="Our Services">השירותים שלנו</h2>
                 <div class="w-24 h-1 bg-olive-500 mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-industrial-800 border border-gray-700 p-8 rounded-sm hover:border-olive-500 transition-colors group">
-                    <div class="w-16 h-16 bg-industrial-950 rounded-sm flex items-center justify-center mb-6 group-hover:bg-olive-500 transition-colors">
-                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                <div class="bg-industrial-800 border border-gray-700 p-8 rounded hover:border-olive-500 transition-colors group">
+                    <div class="w-16 h-16 bg-industrial-950 rounded flex items-center justify-center mb-6 group-hover:bg-olive-600 transition-colors">
+                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-he="עבודות עפר" data-en="Earthworks">עבודות עפר</h3>
-                    <p class="text-gray-400 leading-relaxed" data-he="ביצוע עבודות חפירה, יישור שטח, מילוי והידוק תוך שימוש בכלים הנדסיים מדויקים ועוצמתיים לכל סדר גודל של פרויקט." data-en="Excavation, land leveling, filling, and compaction using precise and powerful engineering tools for projects of all sizes.">
-                        ביצוע עבודות חפירה, יישור שטח, מילוי והידוק תוך שימוש בכלים הנדסיים מדויקים ועוצמתיים לכל סדר גודל של פרויקט.
+                    <h3 class="text-2xl font-bold mb-3" data-he="עבודות הכנה למכונת קידוח" data-en="Drilling Machine Prep">עבודות הכנה למכונת קידוח</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-he="הכשרת השטח, יישור הקרקע והקמת במות קידוח מאובטחות ויציבות להפעלת מכונות קידוח כבדות." data-en="Site clearing, leveling, and creating stable drilling platforms for heavy machinery operation.">
+                        הכשרת השטח, יישור הקרקע והקמת במות קידוח מאובטחות ויציבות להפעלת מכונות קידוח כבדות.
                     </p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-industrial-800 border border-gray-700 p-8 rounded-sm hover:border-olive-500 transition-colors group">
-                    <div class="w-16 h-16 bg-industrial-950 rounded-sm flex items-center justify-center mb-6 group-hover:bg-olive-500 transition-colors">
-                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                <div class="bg-industrial-800 border border-gray-700 p-8 rounded hover:border-olive-500 transition-colors group">
+                    <div class="w-16 h-16 bg-industrial-950 rounded flex items-center justify-center mb-6 group-hover:bg-olive-600 transition-colors">
+                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-he="חציבה ופינוי" data-en="Excavation & Clearance">חציבה ופינוי</h3>
-                    <p class="text-gray-400 leading-relaxed" data-he="שירותי חציבה בסלע, פירוק מבנים ופינוי פסולת בניין לאתרים מורשים במהירות, ביעילות ותוך שמירה על איכות הסביבה." data-en="Rock excavation, demolition, and construction waste clearance to authorized sites quickly, efficiently, and safely.">
-                        שירותי חציבה בסלע, פירוק מבנים ופינוי פסולת בניין לאתרים מורשים במהירות, ביעילות ותוך שמירה על איכות הסביבה.
+                    <h3 class="text-2xl font-bold mb-3" data-he="עבודות קיר קרקע משוריין" data-en="Reinforced Earth Walls">עבודות קיר קרקע משוריין</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-he="תכנון וביצוע קירות קרקע משוריינת תומכים באמצעות טכנולוגיות מתקדמות, למניעת קריסות ולייצוב מדרונות." data-en="Planning and execution of reinforced earth walls using advanced technologies to prevent collapses and stabilize slopes.">
+                        תכנון וביצוע קירות קרקע משוריינת תומכים באמצעות טכנולוגיות מתקדמות, למניעת קריסות ולייצוב מדרונות.
                     </p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-industrial-800 border border-gray-700 p-8 rounded-sm hover:border-olive-500 transition-colors group">
-                    <div class="w-16 h-16 bg-industrial-950 rounded-sm flex items-center justify-center mb-6 group-hover:bg-olive-500 transition-colors">
-                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="bg-industrial-800 border border-gray-700 p-8 rounded hover:border-olive-500 transition-colors group">
+                    <div class="w-16 h-16 bg-industrial-950 rounded flex items-center justify-center mb-6 group-hover:bg-olive-600 transition-colors">
+                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-he="הנחת תשתיות" data-en="Infrastructure Laying">הנחת תשתיות</h3>
-                    <p class="text-gray-400 leading-relaxed" data-he="הכנת הקרקע והנחת תשתיות מים, ביוב, חשמל ותקשורת במקצועיות רבה ובהתאם לכל התקנים הנדרשים." data-en="Land preparation and laying of water, sewage, electrical, and communication infrastructure according to required standards.">
-                        הכנת הקרקע והנחת תשתיות מים, ביוב, חשמל ותקשורת במקצועיות רבה ובהתאם לכל התקנים הנדרשים.
+                    <h3 class="text-2xl font-bold mb-3" data-he="עבודות עפר" data-en="Earthworks">עבודות עפר</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-he="ביצוע מגוון רחב של עבודות עפר, חפירה, מילוי, הידוק הקרקע ועיצוב השטח לפי דרישות התוכנית ההנדסית." data-en="Executing a wide range of earthworks, excavation, filling, soil compaction, and terrain shaping according to engineering plans.">
+                        ביצוע מגוון רחב של עבודות עפר, חפירה, מילוי, הידוק הקרקע ועיצוב השטח לפי דרישות התוכנית ההנדסית.
                     </p>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-industrial-800 border border-gray-700 p-8 rounded-sm hover:border-olive-500 transition-colors group">
-                    <div class="w-16 h-16 bg-industrial-950 rounded-sm flex items-center justify-center mb-6 group-hover:bg-olive-500 transition-colors">
-                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                <div class="bg-industrial-800 border border-gray-700 p-8 rounded hover:border-olive-500 transition-colors group">
+                    <div class="w-16 h-16 bg-industrial-950 rounded flex items-center justify-center mb-6 group-hover:bg-olive-600 transition-colors">
+                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3" data-he="קירות תמך" data-en="Retaining Walls">קירות תמך</h3>
-                    <p class="text-gray-400 leading-relaxed" data-he="בנייה והקמה של קירות תמך, עבודות דיפון, חיזוק מדרונות וייצוב קרקע למניעת קריסות ולשמירה על בטיחות המבנה." data-en="Construction of retaining walls, shoring works, slope reinforcement, and soil stabilization to ensure structural safety.">
-                        בנייה והקמה של קירות תמך, עבודות דיפון, חיזוק מדרונות וייצוב קרקע למניעת קריסות ולשמירה על בטיחות המבנה.
+                    <h3 class="text-2xl font-bold mb-3" data-he="תשתיות" data-en="Infrastructures">תשתיות</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-he="הכנת הקרקע לפיתוח, הנחת תשתיות מים, תקשורת וחשמל וחיבור קווי ביוב באמצעות ציוד צמ״ה מקצועי." data-en="Site preparation for development, laying water, communication, and electrical infrastructure using professional heavy equipment.">
+                        הכנת הקרקע לפיתוח, הנחת תשתיות מים, תקשורת וחשמל וחיבור קווי ביוב באמצעות ציוד צמ״ה מקצועי.
                     </p>
                 </div>
 
+                <!-- Service 5 -->
+                <div class="bg-industrial-800 border border-gray-700 p-8 rounded hover:border-olive-500 transition-colors group lg:col-span-1 md:col-span-2">
+                    <div class="w-16 h-16 bg-industrial-950 rounded flex items-center justify-center mb-6 group-hover:bg-olive-600 transition-colors">
+                        <svg class="w-8 h-8 text-olive-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3" data-he="חפירה וגריסה חומר" data-en="Excavation & Crushing">חפירה וגריסה חומר</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-he="חציבה בסלע, מיון וגריסת חומרי בניין ועפר במקום באמצעות ציוד מתקדם לשימוש חוזר ולחיסכון בעלויות שינוע." data-en="Rock excavation, sorting, and on-site crushing of construction and earth materials for reuse and transportation cost savings.">
+                        חציבה בסלע, מיון וגריסת חומרי בניין ועפר במקום באמצעות ציוד מתקדם לשימוש חוזר ולחיסכון בעלויות שינוע.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Gallery Section -->
-    <section id="projects" class="py-24 bg-gray-200">
+    <section id="projects" class="py-24 bg-gray-100">
         <div class="container mx-auto px-4">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <h2 class="text-4xl font-black text-industrial-900 relative inline-block mb-4">
-                        <span data-he="הכלים והפרויקטים שלנו" data-en="Our Fleet & Projects">הכלים והפרויקטים שלנו</span>
-                        <span class="absolute -bottom-2 right-0 w-2/3 h-1.5 bg-olive-500 ltr:left-0 ltr:right-auto"></span>
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl text-lg" data-he="הצצה לצי הכלים המתקדם שלנו ולשטחי העבודה השונים. אנו ערוכים לכל תוואי שטח." data-en="A glimpse into our advanced fleet and various work sites. We are ready for any terrain.">
-                        הצצה לצי הכלים המתקדם שלנו ולשטחי העבודה השונים. אנו ערוכים לכל תוואי שטח.
-                    </p>
-                </div>
+            <div class="mb-12">
+                <h2 class="text-4xl font-black text-industrial-900 relative inline-block mb-4">
+                    <span data-he="הגלריה שלנו" data-en="Our Gallery">הגלריה שלנו</span>
+                    <span class="absolute -bottom-2 end-0 w-2/3 h-1.5 bg-olive-500"></span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl text-lg mt-2" data-he="הצצה לצי הכלים המתקדם שלנו ולשטחי העבודה השונים." data-en="A glimpse into our advanced equipment fleet and various work sites.">
+                    הצצה לצי הכלים המתקדם שלנו ולשטחי העבודה השונים.
+                </p>
             </div>
 
-            <!-- CSS Grid Gallery -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 
-                <!-- Project 1 -->
-                <div class="relative group overflow-hidden rounded-sm h-[400px]">
-                    <img src="WhatsApp Image 2026-10-25 at 10.50.36 AM.jpeg" alt="Project 1" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-industrial-950/90 via-industrial-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6">
-                            <span class="text-olive-400 font-bold text-sm" data-he="הכשרת שטח" data-en="Land Preparation">הכשרת שטח</span>
-                            <h3 class="text-white text-xl font-bold" data-he="יישור ופינוי לבנייה מסחרית" data-en="Leveling & Clearance for Commercial Build">יישור ופינוי לבנייה מסחרית</h3>
-                        </div>
-                    </div>
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="1.jpeg" alt="Site Prep" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
                 </div>
 
-                <!-- Project 2 -->
-                <div class="relative group overflow-hidden rounded-sm h-[400px]">
-                    <img src="WhatsApp Image 2026-10-25 at 10.50.38 AM.jpeg" alt="Project 2" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-industrial-950/90 via-industrial-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6">
-                            <span class="text-olive-400 font-bold text-sm" data-he="חציבה" data-en="Excavation">חציבה</span>
-                            <h3 class="text-white text-xl font-bold" data-he="עבודות פטיש וחציבה בסלע" data-en="Rock Hammering & Excavation">עבודות פטיש וחציבה בסלע</h3>
-                        </div>
-                    </div>
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="2.jpeg" alt="Drilling" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
                 </div>
 
-                <!-- Project 3 -->
-                <div class="relative group overflow-hidden rounded-sm h-[400px]">
-                    <img src="WhatsApp Image 2026-10-25 at 10.50.46 AM.jpeg" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-industrial-950/90 via-industrial-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div class="p-6">
-                            <span class="text-olive-400 font-bold text-sm" data-he="תשתיות" data-en="Infrastructure">תשתיות</span>
-                            <h3 class="text-white text-xl font-bold" data-he="הכנה לקירות תמך ודיפון" data-en="Preparation for Retaining Walls & Shoring">הכנה לקירות תמך ודיפון</h3>
-                        </div>
-                    </div>
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="3.jpeg" alt="Reinforced Walls" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="4.jpeg" alt="Excavation" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="5.jpeg" alt="Earthworks" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <div class="relative group overflow-hidden rounded h-[300px]">
+                    <img src="6.jpeg" alt="Crushing" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-industrial-950 text-white pt-20 pb-10 border-t-8 border-olive-500">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+    <!-- Contact CTA Section -->
+    <section id="contact" class="bg-industrial-950 text-white py-24 border-t-4 border-olive-500 relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-block bg-industrial-900 border border-gray-800 rounded-2xl p-10 md:p-16 shadow-2xl max-w-3xl mx-auto w-full">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-white" data-he="ר.ח עבודות עפר בע״מ" data-en="R.H Earthworks Ltd">ר.ח עבודות עפר בע״מ</h2>
+                <p class="text-olive-400 text-lg md:text-xl mb-10 font-medium" data-he="זמינים עבורכם לכל פרויקט" data-en="Available for your next project">זמינים עבורכם לכל פרויקט</p>
                 
-                <!-- Contact Info -->
-                <div>
-                    <h2 class="text-3xl font-black mb-6" data-he="יצירת קשר" data-en="Contact Us">יצירת קשר</h2>
-                    <p class="text-gray-400 mb-8 text-lg" data-he="מעוניינים בהצעת מחיר? יש לכם שאלות? הצוות של ר.ח עבודות עפר זמין עבורכם לכל התייעצות." data-en="Looking for a quote? Have questions? Our team is available for any consultation.">
-                        מעוניינים בהצעת מחיר? יש לכם שאלות? הצוות של ר.ח עבודות עפר זמין עבורכם לכל התייעצות.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <!-- Direct WhatsApp Link -->
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-industrial-800 rounded flex items-center justify-center text-olive-500 shrink-0">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm text-gray-400 font-medium" data-he="וואטסאפ (לחצו למעבר)" data-en="WhatsApp (Click to chat)">וואטסאפ (לחצו למעבר)</h4>
-                                <a href="https://wa.me/972500000000" target="_blank" class="text-xl font-bold hover:text-olive-400 transition-colors dir-ltr inline-block">
-                                    050-000-0000
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-industrial-800 rounded flex items-center justify-center text-olive-500 shrink-0">
-                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm text-gray-400 font-medium" data-he="אימייל" data-en="Email">אימייל</h4>
-                                <a href="mailto:office@rh-earthworks.co.il" class="text-lg font-bold hover:text-olive-400 transition-colors">
-                                    office@rh-earthworks.co.il
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-industrial-800 rounded flex items-center justify-center text-olive-500 shrink-0">
-                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm text-gray-400 font-medium" data-he="אזורי שירות" data-en="Service Areas">אזורי שירות</h4>
-                                <p class="text-lg font-bold text-gray-200" data-he="כל רחבי הארץ" data-en="Nationwide (Israel)">
-                                    כל רחבי הארץ
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form to WhatsApp -->
-                <div class="bg-industrial-900 p-8 rounded-sm border border-gray-800 shadow-2xl relative">
-                    <!-- Accent corner -->
-                    <div class="absolute top-0 right-0 ltr:left-0 ltr:right-auto w-16 h-16 overflow-hidden">
-                        <div class="absolute -top-8 -right-8 ltr:-left-8 ltr:-right-auto w-16 h-16 bg-olive-500 rotate-45"></div>
-                    </div>
-                    
-                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <span data-he="שלחו הודעה בוואטסאפ" data-en="Send a WhatsApp Message">שלחו הודעה בוואטסאפ</span>
-                        <svg class="w-6 h-6 text-olive-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    </h3>
-                    
-                    <form onsubmit="submitToWhatsApp(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" for="name" data-he="שם מלא" data-en="Full Name">שם מלא</label>
-                            <input type="text" id="name" required class="w-full bg-industrial-800 text-white border border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 transition-colors" data-placeholder-he="ישראל ישראלי" data-placeholder-en="John Doe" placeholder="ישראל ישראלי">
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" for="phone" data-he="טלפון" data-en="Phone Number">טלפון</label>
-                            <input type="tel" id="phone" required class="w-full bg-industrial-800 text-white border border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 transition-colors dir-ltr text-right ltr:text-left" placeholder="050-000-0000">
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" for="message" data-he="פרטי הפרויקט / הודעה" data-en="Project Details / Message">פרטי הפרויקט / הודעה</label>
-                            <textarea id="message" rows="4" class="w-full bg-industrial-800 text-white border border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 transition-colors resize-none" data-placeholder-he="ספר/י לנו על העבודה הנדרשת..." data-placeholder-en="Tell us about the required work..." placeholder="ספר/י לנו על העבודה הנדרשת..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full flex items-center justify-center gap-2 bg-olive-500 hover:bg-olive-600 text-white font-bold py-3 px-4 rounded-sm transition-colors text-lg mt-4">
-                            <span data-he="מעבר לוואטסאפ" data-en="Continue to WhatsApp">מעבר לוואטסאפ</span>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        </button>
-                    </form>
-                </div>
+                <a href="tel:+97249865352" class="inline-flex items-center justify-center gap-4 text-4xl md:text-6xl font-black text-white hover:text-olive-400 transition-colors group flex-wrap">
+                    <svg class="w-10 h-10 md:w-14 md:h-14 text-olive-500 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span style="direction: ltr; unicode-bidi: embed;">+972 4-9865352</span>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Footer Bottom -->
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-2 opacity-80 text-sm text-gray-400">
-                    <span class="font-bold text-white">R.H Earthworks Ltd</span> &copy; <span id="year"></span>. <span data-he="כל הזכויות שמורות." data-en="All rights reserved.">כל הזכויות שמורות.</span>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-industrial-950 border-t border-gray-800 text-gray-400 py-8 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p>
+                &copy; <span id="year"></span> <span data-he="ר.ח עבודות עפר בע״מ. כל הזכויות שמורות." data-en="R.H Earthworks Ltd. All rights reserved.">ר.ח עבודות עפר בע״מ. כל הזכויות שמורות.</span>
+            </p>
         </div>
     </footer>
 
@@ -445,67 +372,34 @@
         });
 
         // Close mobile menu on link click
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+        menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
         });
 
-        // WhatsApp Form Submission Logic
-        function submitToWhatsApp(event) {
-            event.preventDefault(); // Prevent standard form submission
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Build the message based on current language
-            const isHebrew = document.documentElement.lang === 'he';
-            let formattedMessage = "";
-            
-            if (isHebrew) {
-                formattedMessage = `שלום, הגעתי מהאתר.%0Aשמי: ${name}%0Aטלפון: ${phone}%0A%0Aהודעה:%0A${message}`;
-            } else {
-                formattedMessage = `Hello, I'm contacting you from the website.%0AName: ${name}%0APhone: ${phone}%0A%0AMessage:%0A${message}`;
-            }
-            
-            // Open WhatsApp in new tab
-            const targetPhone = "972500000000"; // Format: country code without '+'
-            const whatsappUrl = `https://wa.me/${targetPhone}?text=${formattedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
         // Language Toggle Logic
-        let currentLang = 'he';
-        
+        let isEnglish = false;
         function toggleLanguage() {
-            currentLang = currentLang === 'he' ? 'en' : 'he';
+            isEnglish = !isEnglish;
+            const htmlEl = document.documentElement;
             
-            // Update document attributes
-            document.documentElement.lang = currentLang;
-            document.documentElement.dir = currentLang === 'he' ? 'rtl' : 'ltr';
+            // Toggle direction and lang attributes
+            htmlEl.lang = isEnglish ? 'en' : 'he';
+            htmlEl.dir = isEnglish ? 'ltr' : 'rtl';
             
-            // Update button texts (showing opposite language option)
-            const buttonText = currentLang === 'he' ? 'EN' : 'עב';
-            document.getElementById('lang-text').textContent = buttonText;
-            document.getElementById('lang-text-mobile').textContent = buttonText;
+            // Update button texts
+            document.getElementById('lang-text').textContent = isEnglish ? 'HE' : 'EN';
+            document.getElementById('lang-text-mobile').textContent = isEnglish ? 'HE' : 'EN';
 
-            // Translate all elements with data-[lang] attribute
-            const elements = document.querySelectorAll(`[data-he]`);
-            elements.forEach(el => {
-                if (el.getAttribute(`data-${currentLang}`)) {
-                    el.innerHTML = el.getAttribute(`data-${currentLang}`);
-                }
+            // Update all text elements with data attributes
+            document.querySelectorAll('[data-he]').forEach(el => {
+                el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-he');
             });
 
-            // Translate placeholders
-            const inputs = document.querySelectorAll(`[data-placeholder-he]`);
-            inputs.forEach(input => {
-                if (input.getAttribute(`data-placeholder-${currentLang}`)) {
-                    input.placeholder = input.getAttribute(`data-placeholder-${currentLang}`);
-                }
+            // Update placeholders
+            document.querySelectorAll('[data-ph-he]').forEach(el => {
+                el.placeholder = isEnglish ? el.getAttribute('data-ph-en') : el.getAttribute('data-ph-he');
             });
         }
     </script>
